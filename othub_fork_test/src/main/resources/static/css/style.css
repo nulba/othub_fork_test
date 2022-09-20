@@ -43,6 +43,11 @@ li {
 	color : pink;
 }
 .nav_bar1 {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.nav_bar2 {
 	padding : 0.5em 0;
 	text-align: right;
 }
@@ -52,39 +57,45 @@ li {
 	font-size: 35px;
 	color: black;
 }
-.nav_user {
+.nav_user_menu {
 	padding-left: 0;
 }
-.nav_user > li {
+.nav_user_menu > li {
 	float:left;
     margin:1px;
     display:block;
     padding:5px;
 }
-.nav_user > li > a:hover {
-	color:purple;
-}
-.nav_bar2 {
+.nav_bar1 {
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
 }
 
-.nav_menu{
-	text-align : right;
+.nav_main_menu{
     margin: 1em 0;
     padding: 0;
 }
-.nav_menu > span {
+.nav_main_menu > span {
     border: 1px solid solid rgb(241, 241, 241);
     border-radius : 2em;
-    cursor: pointer;
     display: inline-block;
-    font-size: 1em;
-    line-height: 1em;
     padding: 10px 20px;
-    position: relative;
-    font-weight: 400;
+}
+
+.nav_user_menu > li > a,
+.nav_main_menu > span > a{
+	display: inline-block;
+	transition: .3s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.nav_user_menu > li > a:hover,
+.nav_main_menu > span > a:hover{
+    -webkit-transform: scale(1.1);
+  	transform: scale(1.1);
+  	color:black;
+  	font-weight: 500;
 }
 
 
@@ -132,6 +143,7 @@ main {
 
 /* 반응형 */
 @media screen and (max-width: 768px){
+	/* navbar */
 	.nav{
 		padding: 14px 30px 0;
 	}
@@ -143,29 +155,32 @@ main {
 		font-size: 15px;
 		color :  rgb(214, 214, 214);
 	}
-	.nav_bar2 {
+	.nav_bar1 {
 		flex-direction:column;
 		align-items: flex-start;
 	}
-	.nav_user {
+	.nav_user_menu {
 		display:none;
 		flex-direction:column;
 		align-items: center;
 		width:100%;
 	}
-	.nav_user li{
+	.nav_user_menu li{
 		width:100%;
 		text-align: center;
 	}
-	.nav_menu{
-		display:none;
+	.nav_bar2{
 		text-align: center;
 	}
-	.nav_user.active,
-	.nav_menu.active{
+	.nav_main_menu{
+		display:none;
+	}
+	.nav_user_menu.active{
 		display: flex;
 		align-items:center;
-		text-align: center;
+	}
+	.nav_main_menu.active{
+		display: inline-block;
 	}
 	
 }
