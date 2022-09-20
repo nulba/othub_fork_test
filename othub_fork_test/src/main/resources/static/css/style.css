@@ -1,0 +1,173 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Della+Respira&family=Kaushan+Script&family=Playball&display=swap');
+@font-face {
+    font-family: 'LeferiBaseType-RegularA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 전체 스타일 설정*/
+body{
+	margin:0;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+   	flex-direction: column;
+   	font-family: 'LeferiBaseType-RegularA';
+   	font-size: 14px;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color : rgb(95, 95, 95);
+}
+li {
+	list-style: none;
+}
+
+
+
+
+/* header*/
+.nav{
+	padding: 14px 50px 0;
+}
+.nav_toggleBtn {
+	display:none;
+	position:absolute;
+	top: 31px;
+	right: 60px;
+	font-size: 19px;
+	color : pink;
+}
+.nav_bar1 {
+	padding : 0.5em 0;
+	text-align: right;
+}
+.nav_logo > a {
+	font-family: 'Playball', cursive;
+	font-weight: 500;
+	font-size: 35px;
+	color: black;
+}
+.nav_user {
+	padding-left: 0;
+}
+.nav_user > li {
+	float:left;
+    margin:1px;
+    display:block;
+    padding:5px;
+}
+.nav_user > li > a:hover {
+	color:purple;
+}
+.nav_bar2 {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.nav_menu{
+	text-align : right;
+    margin: 1em 0;
+    padding: 0;
+}
+.nav_menu > span {
+    border: 1px solid solid rgb(241, 241, 241);
+    border-radius : 2em;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 10px 20px;
+    position: relative;
+    font-weight: 400;
+}
+
+
+
+
+
+/* main */
+main {
+}
+.main > img {
+	width:100%;
+}
+
+
+
+
+
+
+/* footer */
+.footer_line{
+	margin:0;
+	height:1px;
+	background-color:rgb(240, 240, 240);
+}
+.footer{
+	width:100%;
+	height: 150px;
+	position:asolute !important;
+	background-color: #ffffff;
+	padding: 30px 30px 0; 
+	color: rgb(192, 192, 192);
+}
+.footer span {
+	font-size:11px;
+	padding: 10px 10px 7px;
+	margin:3px;
+	border: 1px solid rgb(236, 236, 236);
+	border-radius: 6px;
+	display: inline-block;
+}
+
+
+
+
+
+/* 반응형 */
+@media screen and (max-width: 768px){
+	.nav{
+		padding: 14px 30px 0;
+	}
+	.nav_toggleBtn {
+		display:block;
+		position:absolute;
+		top: 23px;
+		right: 30px;
+		font-size: 15px;
+		color :  rgb(214, 214, 214);
+	}
+	.nav_bar2 {
+		flex-direction:column;
+		align-items: flex-start;
+	}
+	.nav_user {
+		display:none;
+		flex-direction:column;
+		align-items: center;
+		width:100%;
+	}
+	.nav_user li{
+		width:100%;
+		text-align: center;
+	}
+	.nav_menu{
+		display:none;
+		text-align: center;
+	}
+	.nav_user.active,
+	.nav_menu.active{
+		display: flex;
+		align-items:center;
+		text-align: center;
+	}
+	
+}
+
+
